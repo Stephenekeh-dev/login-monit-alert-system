@@ -15,5 +15,5 @@ services:
         value: login-monit-alert-system.onrender.com
       - key: DATABASE_URL
         fromDatabase:
-          name: login-monit-alert-system-db
+          name: login_monit_alert_system_db
           property: connectionString
