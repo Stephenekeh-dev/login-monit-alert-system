@@ -25,4 +25,6 @@ COPY . .
 RUN python manage.py collectstatic --noinput
 
 # Run migrations and server
-CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"]
+#CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py migrate && echo \"from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.filter(email='admin@example.com').exists() or User.objects.create_superuser('admin@example.com', 'password')\" | python manage.py shell && gunicorn backend.wsgi:application --bind 0.0.0.0:8000"]
+
