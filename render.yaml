@@ -10,11 +10,10 @@ services:
       - key: DEBUG
         value: "False"
       - key: SECRET_KEY
-        value:  "Op3DUZufsFe4CUR6Kmrdu8alhPa4Jcw8xl4RFCc9I8upk1yOBUsuLT4LdP30HMfyGfc"
+        value: "Op3DUZufsFe4CUR6Kmrdu8alhPa4Jcw8xl4RFCc9I8upk1yOBUsuLT4LdP30HMfyGfc"
       - key: DJANGO_ALLOWED_HOSTS
         value: login-monit-alert-system.onrender.com
       - key: DATABASE_URL
         fromDatabase:
           name: login-monit-alert-system-db
           property: connectionString
-# force redeploy
