@@ -42,13 +42,15 @@ ALLOWED_HOSTS = ['backend.onrender.com', 'localhost', '127.0.0.1']
 CORS_ALLOWED_ORIGINS = [
     "https://your-netlify-site.netlify.app",
     "http://localhost:4200",
-    'https://frontend-app.vercel.app',
+    'https://login-moni-alert-front.vercel.app',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://your-netlify-site.netlify.app",
     "http://localhost:4200",
+    'https://login-moni-alert-front.vercel.app',
 ]
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -126,6 +128,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
+print("DEBUG: DATABASE_URL =", os.getenv("DATABASE_URL"))
+
 
 
 # Database
